@@ -17,14 +17,10 @@ const Index = () => {
     // 주소로 위도 경도 찾기 - 목적지
     axios
       // .get("http://localhost:3000/api/navermap", {
-      // .get("/api/navermap/route", { // 엔드포인트로 쓰는거 맞다던데..
-      .get("/map-geocode/v2/geocode", {
+      .get("/api/navermap/route", { // 엔드포인트로 쓰는거 맞다던데..
+        // .get("/map-geocode/v2/geocode", {
         params: {
           query: "서울 관악구 관악로 1",
-        },
-        headers: {
-          "X-NCP-APIGW-API-KEY-ID": "ugm16gkcw2",
-          "X-NCP-APIGW-API-KEY": "mDTqyhP8j8bw0IPW8dOaPDG0Wm2VRiSzyqvMotRw",
         },
       })
       // 경로 탐색
