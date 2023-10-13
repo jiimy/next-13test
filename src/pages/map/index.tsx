@@ -1,5 +1,5 @@
 
-'use clent';
+// 'use clent';
 
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
@@ -17,7 +17,7 @@ const Index = () => {
     // 주소로 위도 경도 찾기 - 목적지
     axios
       // .get("http://localhost:3000/api/navermap", {
-      .get("https://next-13test.pages.dev//api/navermap", {
+      .get("https://next-13test.pages.dev/api/navermap", {
         params: {
           query: "서울 관악구 관악로 1",
         },
@@ -29,7 +29,7 @@ const Index = () => {
         console.log('컨버터2: ', response.data.data.addresses[0].y)
         axios
           // .get("http://localhost:3000/api/path", {
-          .get("https://next-13test.pages.dev//api/path", {
+          .get("https://next-13test.pages.dev/api/path", {
             params: {
               start: `${getLocation.longitude},${getLocation.latitude}`,
               goal: `${response.data.data.addresses[0].x}, ${response.data.data.addresses[0].y}`,
