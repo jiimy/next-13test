@@ -18,7 +18,7 @@ const Index = () => {
     axios
       // .get("http://localhost:3000/api/navermap", {
       // .get("/api/navermap/route", { // 엔드포인트로 쓰는거 맞다던데..
-      .get("https://naveropenapi.apigw.ntruss.com/map-geocode/v2/geocode", {
+      .get("/map-geocode/v2/geocode", {
         params: {
           query: "서울 관악구 관악로 1",
         },
