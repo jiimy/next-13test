@@ -17,8 +17,8 @@ const Index = () => {
     // 주소로 위도 경도 찾기 - 목적지
     axios
       // .get("http://localhost:3000/api/navermap", {
-      .get("https://next-13test.pages.dev/api/navermap", { // 실패
-      // .get("/api/navermap", {
+      // .get("https://next-13test.pages.dev/api/navermap", { // 실패
+      .get("/api/navermap/route", { // 엔드포인트로 쓰는거 맞다던데..
         params: {
           query: "서울 관악구 관악로 1",
         },
