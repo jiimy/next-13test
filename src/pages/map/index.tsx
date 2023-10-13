@@ -7,11 +7,9 @@ const Index = () => {
   const getLocation = useRecoilValue(locationSelector);
   const [route, setRoute] = useState([]);
 
+
+
   useEffect(() => {
-    const getLocation = {
-      longitude: '34',
-      latitude: '11',
-    }
     // 주소로 위도 경도 찾기 - 목적지
     axios
       .get("https://next-13test.pages.dev/api/navermap", {
@@ -39,7 +37,7 @@ const Index = () => {
           })
       })
 
-  }, [])
+  }, [getLocation])
 
   useEffect(() => {
     if (route.length > 0) {
