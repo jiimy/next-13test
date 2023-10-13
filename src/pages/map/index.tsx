@@ -13,7 +13,7 @@ const Index = () => {
     console.log('시작');
     // 주소로 위도 경도 찾기 - 목적지
     axios
-      .get("https://next-13test.pages.dev/api/navermap", {
+      .get("http://localhost:3000/api/navermap", {
         params: {
           query: "서울 관악구 관악로 1",
         },
@@ -24,7 +24,7 @@ const Index = () => {
         console.log('컨버터1: ', response.data.data.addresses[0].x)
         console.log('컨버터2: ', response.data.data.addresses[0].y)
         axios
-          .get("https://next-13test.pages.dev/api/path", {
+          .get("http://localhost:3000/api/path", {
             params: {
               start: `${getLocation.longitude},${getLocation.latitude}`,
               goal: `${response.data.data.addresses[0].x}, ${response.data.data.addresses[0].y}`,
