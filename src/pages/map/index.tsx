@@ -7,9 +7,10 @@ const Index = () => {
   const getLocation = useRecoilValue(locationSelector);
   const [route, setRoute] = useState([]);
 
-
+  console.log('user 스토어', getLocation);
 
   useEffect(() => {
+    console.log('시작');
     // 주소로 위도 경도 찾기 - 목적지
     axios
       .get("https://next-13test.pages.dev/api/navermap", {
@@ -34,12 +35,13 @@ const Index = () => {
             console.log('경로탐색 : ', response.data.data.route.trafast[0].path);
             // 경로 정보 설정
             setRoute(response.data.data.route.trafast[0].path);
-          })
-      })
+          }).catch((err) => console.log('err1', err));
+      }).catch((err) => console.log('err2', err));
 
   }, [getLocation])
 
   useEffect(() => {
+    console.log('경로 시작');
     if (route.length > 0) {
       const map = new window.naver.maps.Map('map', {
         center: new window.naver.maps.LatLng(getLocation.latitude, getLocation.longitude), // 초기 지도 중심 좌표 설정
